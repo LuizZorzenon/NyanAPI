@@ -9,10 +9,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body class="min-h-screen flex flex-col items-center justify-center p-4">
-    <h1 class="text-3xl font-bold mb-6">Gato Aleatório</h1>
+    <h1 class="text-3xl font-bold mb-6">nyanAPI</h1>
 
     <div id="day-image-container" class="mb-6 flex justify-center">
-        <img id="day-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSYzs3nKGVQz9Ah4huAqRWfItaoMIhAIexew&s" alt="Imagem do dia">
+        <img id="day-image" src="https://cdn2.thecatapi.com/images/840.gif" alt="Imagem do dia">
     </div>
     <div>
         
@@ -46,7 +46,7 @@
     </button>
 
         <button
-    hx-get="/pikachu" 
+    hx-get="/pikachu_image" 
     hx-target="#day-image" 
     hx-swap="outerHTML"
     class="btn btn-primary"

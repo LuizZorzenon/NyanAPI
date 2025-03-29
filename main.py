@@ -45,13 +45,12 @@ def get_space_image():
 @app.route('/pikachu_image')
 def easter_egg():
     try:
-        response = requests.get(f"https://pokeapi.co/api/v2/pokemon/pikachu")
-        print(response)
+        response = requests.get("https://pokeapi.co/api/v2/pokemon/pikachu")
+        response.raise_for_status()
         data = response.json()
         url = data["sprites"]["front_default"]
-        print(url)
-        return f'<img id="day-image" src="{url}" alt="Imagem pikachu" width="450px" height="450" class="max-w-full rounded-lg shadow-lg">'  # Retorna todos os dados da APOD
-    except Exception as e:
+        return f'<img id="day-image" src="{url}" alt="Imagem pikachu" width="450px" height="450" class="max-w-full rounded-lg shadow-lg">'
+    except requests.exceptions.RequestException as e:
         return jsonify({"error": str(e)}), 500
     
 
